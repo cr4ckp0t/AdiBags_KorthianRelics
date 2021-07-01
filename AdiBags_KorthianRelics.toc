@@ -2,9 +2,9 @@
 ## Title: AdiBags - Korthian Relics
 ## Version: 1.0.0
 ## Author: Crackpot
-## Notes: Adds Archivist's Codex Relics filter to AdiBags.
+## Notes: Creates AdiBags filter for Korthian Relics added in WoW patch 9.1.
 ## X-Category: Bags & Inventory
-## Dependancies: AdiBags
+## Dependencies: AdiBags
 
 Localization.lua
 AdiBags_KorthianRelics.lua

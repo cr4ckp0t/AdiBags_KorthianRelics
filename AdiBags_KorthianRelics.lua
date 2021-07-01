@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
--- AdiBags Relics By Crackpot (US, Arthas)
+-- AdiBags - Korthian Relics By Crackpot (US, Arthas)
 -------------------------------------------------------------------------------
 
 local addonName, addon = ...
@@ -28,7 +28,14 @@ setFilter.uiDesc = L["Korthian Relics for new the new reputation added in 9.1."]
 function setFilter:OnInitialize()
 	self.relics = {
 		-- From: https://www.wowhead.com/guides/archivists-codex-reputation-guide#one-time-korthian-relic-quests
+		-- If I missed any, open a ticket: https://github.com/cr4ckp0t/AdiBags_KorthianRelics/issues
 
+		-- random items
+		[185636] = true, -- The Archivists' Codex
+		[186718] = true, -- Teleporter Repair Kit
+		[186731] = true, -- Repaired Riftkey
+		-- worth 1 point
+		[186685] = true, -- Relic Fragment
 		-- worth 8 research
 		[187322] = true, -- Crumbling Stone Tablet
 		[187457] = true, -- Engraved Glass Pane
@@ -45,11 +52,51 @@ function setFilter:OnInitialize()
 		[187326] = true, -- Half-Completed Runeforge Pattern
 		[187462] = true, -- Scroll of Shadowlands Fables
 		[187478] = true, -- White Razorwing Talon
+		-- worth 100 research
 		[187336] = true, -- Forbidden Weapon Schematics
 		[187466] = true, -- Korthian Cypher Book
 		[187332] = true, -- Recovered Page of Voices
 		[187328] = true, -- Ripped Cosmology Chart
-		[187334] = true -- Shattered Void Tablet
+		[187334] = true, -- Shattered Void Tablet
+		-- worth 150 research
+		[187330] = true, -- Naaru Shard Fragment
+		[187329] = true, -- Old God Specimen Jar
+		[187467] = true, -- Perplexing Rune-Cube
+		[187331] = true, -- Tattered Fae Designs
+		-- worth 300 research
+		[187311] = true, -- Azgoth's Tattered Maps
+		[187333] = true, -- Core of an Unknown Titan
+		[187350] = true, -- Displaced Relic
+		[187335] = true, -- Maldraxxus Larva Shell
+		-- rank 1
+		[185914] = true, -- Damaged Talisman
+		[187200] = true, -- Singing Steel Ingot
+		[187206] = true, -- Book of Binding: The Mad Witch
+		[187201] = true, -- Celestial Shadowlands Chart
+		[187055] = true, -- Pouch of Rune Chits
+		-- rank 2
+		[187612] = true, -- Key of Flowing Waters
+		[187614] = true, -- Key of Many Thoughts
+		[186984] = true, -- Korthite Crystal Key
+		[187613] = true, -- Key of the Inner Chambers
+		[187052] = true, -- The Netherstar
+		[187150] = true, -- Gorak Claw Fetish
+		[187047] = true, -- Gulse of the Changeling
+		[187119] = true, -- Ring of Self-Reflection
+		-- rank 3
+		[187204] = true, -- Drum of the Death Loa
+		[187103] = true, -- Everliving Statuette
+		[187205] = true, -- Sack of Strange Soil
+		[187104] = true, -- Obelisk of Dark Tidings
+		-- rank 4
+		[187210] = true, -- Book of Binding: The Tormented Sorcerer
+		[187202] = true, -- Unstable Explosive Orb
+		[187207] = true, -- Enigmatic Decrypting Device
+		[187203] = true, -- Cipher of Understanding
+		-- rank 5
+		[187208] = true, -- Shadow Slicing Shortsword
+		[187209] = true, -- Lang Family Wood-Carving
+		[186014] = true -- Bulwark of Divine Intent
 	}
 end
 
