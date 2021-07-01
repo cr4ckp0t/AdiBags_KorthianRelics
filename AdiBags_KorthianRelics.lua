@@ -21,19 +21,19 @@ local function tooltipInit()
 	return tip
 end
 
-local setFilter = AdiBags:RegisterFilter("Korthian Relics", 98, "ABEvent-1.0")
-setFilter.uiName = L["Korthian Relics"]
-setFilter.uiDesc = L["Korthian Relics for new the new reputation added in 9.1."]
+local relicFilter = AdiBags:RegisterFilter("Korthian Relics", 98, "ABEvent-1.0")
+relicFilter.uiName = L["Korthian Relics"]
+relicFilter.uiDesc = L["Korthian Relics for new the new reputation added in 9.1."]
 
-function setFilter:OnInitialize()
+local itemFilter = AdiBags:RegisterFilter("Korthian Items", 98, "ABEvent-1.0")
+itemFilter.uiName = L["Korthian Items"]
+itemFilter.uiname = L["Random items from Korthia."]
+
+function relicFilter:OnInitialize()
 	self.relics = {
 		-- From: https://www.wowhead.com/guides/archivists-codex-reputation-guide#one-time-korthian-relic-quests
 		-- If I missed any, open a ticket: https://github.com/cr4ckp0t/AdiBags_KorthianRelics/issues
 
-		-- random items
-		[185636] = true, -- The Archivists' Codex
-		[186718] = true, -- Teleporter Repair Kit
-		[186731] = true, -- Repaired Riftkey
 		-- worth 1 point
 		[186685] = true, -- Relic Fragment
 		-- worth 8 research
@@ -75,10 +75,6 @@ function setFilter:OnInitialize()
 		[187201] = true, -- Celestial Shadowlands Chart
 		[187055] = true, -- Pouch of Rune Chits
 		-- rank 2
-		[187612] = true, -- Key of Flowing Waters
-		[187614] = true, -- Key of Many Thoughts
-		[186984] = true, -- Korthite Crystal Key
-		[187613] = true, -- Key of the Inner Chambers
 		[187052] = true, -- The Netherstar
 		[187150] = true, -- Gorak Claw Fetish
 		[187047] = true, -- Gulse of the Changeling
@@ -100,21 +96,72 @@ function setFilter:OnInitialize()
 	}
 end
 
-function setFilter:Update()
+function itemFilter:OnInitialize()
+	self.items = {
+		-- rank 2 keys
+		[187612] = true, -- Key of Flowing Waters
+		[187614] = true, -- Key of Many Thoughts
+		[186984] = true, -- Korthite Crystal Key
+		[187613] = true, -- Key of the Inner Chambers
+		-- socket/conduit
+		[187134] = true, -- Alloy-Warping Facetor
+		[187148] = true, -- Death-Bound Shard
+		[187216] = true, -- Soultwining Crescent
+		-- random items
+		[187187] = true, -- Korthian Armaments
+		[185636] = true, -- The Archivists' Codex
+		[185972] = true, -- Tormentor's Cache
+		[186718] = true, -- Teleporter Repair Kit
+		[187431] = true, -- Sleeping Armament
+		[186731] = true -- Repaired Riftkey
+	}
+end
+
+function relicFilter:Update()
 	self:SendMessage("AdiBags_FiltersChanged")
 end
 
-function setFilter:OnEnable()
+function itemFilter:Update()
+	self:SendMessage("AdiBags_FiltersChanged")
+end
+
+function relicFilter:OnEnable()
 	AdiBags:UpdateFilters()
 end
 
-function setFilter:OnDisable()
+function itemFilter:OnEnable()
 	AdiBags:UpdateFilters()
 end
 
-function setFilter:Filter(slotData)
+function relicFilter:OnDisable()
+	AdiBags:UpdateFilters()
+end
+
+function itemFilter:OnDisable()
+	AdiBags:UpdateFilters()
+end
+
+function relicFilter:Filter(slotData)
 	if self.relics[tonumber(slotData.itemId)] then
 		return L["Korthian Relics"]
+	end
+
+	tooltip = tooltip or tooltipInit()
+	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+	tooltip:ClearLines()
+
+	if slotData.bag == BANK_CONTAINER then
+		tooltip:SetInventoryItem("player", BankButtonIDToInvSlotID(slotData.slot, nil))
+	else
+		tooltip:SetBagItem(slotData.bag, slotData.slot)
+	end
+
+	tooltip:Hide()
+end
+
+function itemFilter:Filter(slotData)
+	if self.items[tonumber(slotData.itemId)] then
+		return L["Korthian Items"]
 	end
 
 	tooltip = tooltip or tooltipInit()

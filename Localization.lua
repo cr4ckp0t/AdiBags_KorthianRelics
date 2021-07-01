@@ -24,6 +24,7 @@ if locale == "deDE" then
 elseif locale == "enUS" then
 	L["Korthian Relics"] = true
 	L["Korthian Relics for new the new reputation added in 9.1."] = true
+	L["Korthian Items"] = true
 elseif locale == "esES" then
 	--Translation missing
 elseif locale == "esMX" then
