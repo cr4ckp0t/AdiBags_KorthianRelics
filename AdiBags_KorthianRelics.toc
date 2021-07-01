@@ -1,0 +1,10 @@
+## Interface: 90100
+## Title: AdiBags - Korthian Relics
+## Version: 1.0.0
+## Author: Crackpot
+## Notes: Adds Archivist's Codex Relics filter to AdiBags.
+## X-Category: Bags & Inventory
+## Dependancies: AdiBags
+
+Localization.lua
+AdiBags_KorthianRelics.lua
