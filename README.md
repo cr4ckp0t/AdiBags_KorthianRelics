@@ -5,17 +5,11 @@ Creates an AdiBags filter for the relics added in WoW patch 9.1. These relics ar
 
 [https://www.curseforge.com/wow/addons/adibags-korthian-relics](https://www.curseforge.com/wow/addons/adibags-korthian-relics)
 
-## Missing an item?
+## Missing an item or Found a Bug?
 
-Simply [open a ticket](https://github.com/cr4ckp0t/AdiBags_KorthianRelics/issues) and I will get it added as soon as possible.
+Simply [open a ticket](https://github.com/cr4ckp0t/AdiBags_KorthianRelics/issues) and I will get it added or fixed as soon as possible.
 
-## Tracked Items
-
-### Random Items
-
-* Repaired Riftkey
-* Teleporter Repair Kit
-* The Archivists' Codex
+## Korthrian Relics
 
 ### Worth 1 Research
 
@@ -101,3 +95,30 @@ Simply [open a ticket](https://github.com/cr4ckp0t/AdiBags_KorthianRelics/issues
 * Bulwark of Divine Intent
 * Lang Family Wood-Carving
 * Shadow Slicing Shortsword
+
+## Kothrian Items
+
+### Rank 2 Keys
+
+* Key of Flowing Waters
+* Key of Many Thoughts
+* Korthite Crystal Key
+* Key of the Inner Chambers
+
+### Sockets & Conduits
+
+* Alloy-Warping Facetor
+* Death-Bound Shard
+* Soultwining Crescent
+
+### Random Items
+
+* Korthian Armaments
+* The Archivists' Codex
+* Tormentor's Cache
+* Teleporter Repair Kit
+* Sleeping Armament
+* Repaired Riftkey
+* Evolving Mawshroom
+* Questionable Mawshroom
+* Lost Razorwing Egg
