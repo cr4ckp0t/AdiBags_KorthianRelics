@@ -27,7 +27,11 @@ relicFilter.uiDesc = L["Korthian Relics for new the new reputation added in 9.1.
 
 local itemFilter = AdiBags:RegisterFilter("Korthian Items", 98, "ABEvent-1.0")
 itemFilter.uiName = L["Korthian Items"]
-itemFilter.uiname = L["Random items from Korthia."]
+itemFilter.uiDesc = L["Random items from Korthia."]
+
+local consumableFilter = AdiBags:RegisterFilter("Kothrian Consumables", 98, "ABEvent-1.0")
+consumableFilter.uiName = L["Kothrian Consumables"]
+consumableFilter.uiDesc = L["Consumables added from Kothria in 9.1."]
 
 function relicFilter:OnInitialize()
 	self.relics = {
@@ -113,10 +117,20 @@ function itemFilter:OnInitialize()
 		[185972] = true, -- Tormentor's Cache
 		[186718] = true, -- Teleporter Repair Kit
 		[187431] = true, -- Sleeping Armament
+		[187236] = true, -- Collapsing Riftstone
 		[186731] = true, -- Repaired Riftkey
+		[187508] = true, -- Trained Gromit Carrier
+		[187054] = true -- Lost Razorwing Egg
+	}
+end
+
+function consumableFilter:OnInitialize()
+	self.consumables = {
 		[187418] = true, -- Evolving Mawshroom
 		[187244] = true, -- Questionable Mawshroom
-		[187054] = true -- Lost Razorwing Egg
+		[187153] = true, -- Tasty Mawshroom
+		[187421] = true, -- Ashen Liniment
+		[187236] = true -- Zovaal's Dark Carafe
 	}
 end
 
@@ -125,6 +139,10 @@ function relicFilter:Update()
 end
 
 function itemFilter:Update()
+	self:SendMessage("AdiBags_FiltersChanged")
+end
+
+function consumableFilter:Update()
 	self:SendMessage("AdiBags_FiltersChanged")
 end
 
@@ -142,6 +160,9 @@ end
 
 function itemFilter:OnDisable()
 	AdiBags:UpdateFilters()
+end
+
+local function PerformFiltering(slotData)
 end
 
 function relicFilter:Filter(slotData)
@@ -165,6 +186,24 @@ end
 function itemFilter:Filter(slotData)
 	if self.items[tonumber(slotData.itemId)] then
 		return L["Korthian Items"]
+	end
+
+	tooltip = tooltip or tooltipInit()
+	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+	tooltip:ClearLines()
+
+	if slotData.bag == BANK_CONTAINER then
+		tooltip:SetInventoryItem("player", BankButtonIDToInvSlotID(slotData.slot, nil))
+	else
+		tooltip:SetBagItem(slotData.bag, slotData.slot)
+	end
+
+	tooltip:Hide()
+end
+
+function consumableFilter:Filter(slotData)
+	if self.consumables[tonumber(slotData.itemId)] then
+		return L["Kothrian Consumables"]
 	end
 
 	tooltip = tooltip or tooltipInit()

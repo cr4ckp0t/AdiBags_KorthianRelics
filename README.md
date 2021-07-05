@@ -119,6 +119,12 @@ Simply [open a ticket](https://github.com/cr4ckp0t/AdiBags_KorthianRelics/issues
 * Teleporter Repair Kit
 * Sleeping Armament
 * Repaired Riftkey
+* Lost Razorwing Egg
+
+## Kothrian Consumables
+
 * Evolving Mawshroom
 * Questionable Mawshroom
-* Lost Razorwing Egg
+* Tasty Mawshroom
+* Ashen Liniment
+* Zovaal's Dark Carafe
