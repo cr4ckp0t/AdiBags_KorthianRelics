@@ -162,9 +162,6 @@ function itemFilter:OnDisable()
 	AdiBags:UpdateFilters()
 end
 
-local function PerformFiltering(slotData)
-end
-
 function relicFilter:Filter(slotData)
 	if self.relics[tonumber(slotData.itemId)] then
 		return L["Korthian Relics"]

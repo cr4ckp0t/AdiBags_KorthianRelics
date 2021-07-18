@@ -33,7 +33,12 @@ elseif locale == "esES" then
 elseif locale == "esMX" then
 	--Translation missing
 elseif locale == "frFR" then
-	--Translation missing
+	L["Reliques Korthiennes"] = true
+	L["Reliques Korthiennes ajoutées à la 9.1."] = true
+	L["Objets Korthiens"] = true
+	L["Objets aléatoires de Korthia."] = true
+	L["Consommables Korthiens"] = true
+	L["Consommables de Korthia ajoutés à la 9.1."] = true
 elseif locale == "itIT" then
 	--Translation missing
 elseif locale == "koKR" then

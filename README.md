@@ -5,6 +5,8 @@ Creates an AdiBags filter for the relics added in WoW patch 9.1. These relics ar
 
 [https://www.curseforge.com/wow/addons/adibags-korthian-relics](https://www.curseforge.com/wow/addons/adibags-korthian-relics)
 
+Also check out my filter for Shards of Domination: [https://www.curseforge.com/wow/addons/adibags-shards-of-domination](https://www.curseforge.com/wow/addons/adibags-shards-of-domination)
+
 ## Missing an item or Found a Bug?
 
 Simply [open a ticket](https://github.com/cr4ckp0t/AdiBags_KorthianRelics/issues) and I will get it added or fixed as soon as possible.
