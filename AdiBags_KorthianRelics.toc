@@ -1,4 +1,4 @@
-## Interface: 90205
+## Interface: 90207
 ## Title: AdiBags - Korthian Relics
 ## Version: 1.1.6
 ## Author: Crackpot
