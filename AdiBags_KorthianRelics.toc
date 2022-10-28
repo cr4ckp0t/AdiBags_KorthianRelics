@@ -1,6 +1,6 @@
-## Interface: 90207
+## Interface: 100000
 ## Title: AdiBags - Korthian Relics
-## Version: 1.1.7
+## Version: 1.1.8
 ## Author: Crackpot
 ## Notes: Creates AdiBags filter for Korthian Relics added in WoW patch 9.1.
 ## X-Category: Bags & Inventory
@@ -8,4 +8,5 @@
 
 Localization.lua
 AdiBags_KorthianRelics.lua
+
 
