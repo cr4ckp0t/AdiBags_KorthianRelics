@@ -167,7 +167,8 @@ function relicFilter:Filter(slotData)
 		return L["Korthian Relics"]
 	end
 
-	tooltip = tooltip or tooltipInit()
+	--tooltip = tooltip or tooltipInit()
+	tooltip = GameTooltip
 	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
 	tooltip:ClearLines()
 
@@ -185,7 +186,8 @@ function itemFilter:Filter(slotData)
 		return L["Korthian Items"]
 	end
 
-	tooltip = tooltip or tooltipInit()
+	--tooltip = tooltip or tooltipInit()
+	tooltip = GameTooltip
 	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
 	tooltip:ClearLines()
 
@@ -203,7 +205,8 @@ function consumableFilter:Filter(slotData)
 		return L["Kothrian Consumables"]
 	end
 
-	tooltip = tooltip or tooltipInit()
+	--tooltip = tooltip or tooltipInit()
+	tooltip = GameTooltip
 	tooltip:SetOwner(UIParent, "ANCHOR_NONE")
 	tooltip:ClearLines()
 
